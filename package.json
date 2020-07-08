@@ -11,6 +11,7 @@
     "@ionic/react": "^5.0.5",
     "dayjs": "^1.8.29",
     "ionicons": "^5.0.1",
+    "npm_lazy": "^1.14.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },

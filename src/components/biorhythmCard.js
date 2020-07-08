@@ -3,9 +3,9 @@ import dayjs from 'dayjs';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem } from '@ionic/react';
 import { calculateBiorhythms } from '../calculations';
 function formatDate(isoString){
-    return dayjs(isoString).format('D MM YYYY')
+    return dayjs(isoString).format('D MMM YYYY')
 }
-function bio({birthDate, targetDate}){
+function Biorhythmcard({birthDate, targetDate}){
     
     const {physical, emotional, intellectual} = calculateBiorhythms(birthDate, targetDate);
 
@@ -28,4 +28,4 @@ return(
         </IonCard>
 )}
 
-export default bio ;
+export default Biorhythmcard ;
