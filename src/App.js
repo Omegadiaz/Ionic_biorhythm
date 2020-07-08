@@ -23,7 +23,12 @@ const [targetDate, setTargetDate] =  useState(new Date().toISOString());
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-     
+     {
+        birthDay && <Bio targetDate={targetDate} birthDate={birthDay}/>
+      }
+      
+      {/*Ojito con los nombres de las props*/}
+      
       <IonItem>
         <IonLabel position="stacked">Fecha de nacimiento:</IonLabel>
         <IonDatetime displayFormat="D MMM YYYY"
@@ -38,11 +43,6 @@ const [targetDate, setTargetDate] =  useState(new Date().toISOString());
         onIonChange={(event) => setTargetDate(event.detail.value)}
         />
       </IonItem>
-      {
-        birthDay && <Bio targetDate={targetDate} birthDate={birthDay}/>
-      }
-      
-      {/*Ojito con los nombres de las props*/}
       
       </IonContent>
     </IonApp>
