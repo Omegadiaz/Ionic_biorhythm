@@ -1,20 +1,19 @@
 import React from 'react';
 import { ResponsiveContainer, LineChart, Line, XAxis} from 'recharts';
+import { calculateBiorhythmSeries } from '../calculations';
+import dayjs from 'dayjs';
 
-const data = [
-    {date:'2020-02-01' ,physical:  0.99, emotional:  0.50, intellectual:   0.25},
-    {date:'2020-02-02' ,physical:  0.37, emotional: -0.50, intellectual: -0.85},
-    {date:'2020-02-03' ,physical: -0.10, emotional:  0.90, intellectual:  0.48}
-]
-
-function BiorhytmChart(){
+function BiorhytmChart({ birthDate, targetDate}){
+    const startDate = dayjs(targetDate).subtract(15, 'day').toISOString();
+    //calculamos 15 dias antes para calcular la fecha de inicio
+    const data = calculateBiorhythmSeries(birthDate, startDate, 31);
     return(
     <ResponsiveContainer width="100%" height={200}>
            <LineChart data={data}>
                <XAxis dataKey="date"/>
-                <Line dataKey="physical"    stroke="green"/>
-                <Line dataKey="emotional"   stroke="red"/>
-                <Line dataKey="intellectual" stroke="blue"/>
+                <Line type="natural" dot={false} dataKey="physical"    stroke="green"/>
+                <Line type="natural" dot={false} dataKey="emotional"   stroke="red"/>
+                <Line type="natural" dot={false} dataKey="intellectual" stroke="blue"/>
            </LineChart>
     </ResponsiveContainer>
 

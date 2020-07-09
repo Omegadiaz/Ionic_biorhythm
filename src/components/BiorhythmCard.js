@@ -17,7 +17,7 @@ return(
           <IonCardTitle className="ion-text-center">{formatDate(targetDate)}</IonCardTitle>
           </IonCardHeader>
         <IonCardContent>
-          <BiorhythmChart />
+          <BiorhythmChart birthDate={birthDate} targetDate={targetDate} />
         <IonItem>
           <p>Physical: {physical.toFixed(4)}</p>
           </IonItem>
