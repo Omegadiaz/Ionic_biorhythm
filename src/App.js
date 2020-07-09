@@ -10,10 +10,11 @@ import {
 } from '@ionic/react';
 import React, {useState} from 'react';
 import Bio from './components/BiorhythmCard';
+import useLocalStorage from './hooks';
 
 
 function App() {
-const [birthDay, setBirthDay] = useState('');
+const [birthDay, setBirthDay] = useLocalStorage('birthDate','');
 const [targetDate, setTargetDate] =  useState(new Date().toISOString());
   return (
     <IonApp>

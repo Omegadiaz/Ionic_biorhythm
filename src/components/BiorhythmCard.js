@@ -2,6 +2,8 @@ import React from 'react';
 import dayjs from 'dayjs';
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonItem } from '@ionic/react';
 import { calculateBiorhythms } from '../calculations';
+import BiorhythmChart from './BiorhythmChart';
+
 function formatDate(isoString){
     return dayjs(isoString).format('D MMM YYYY')
 }
@@ -15,6 +17,7 @@ return(
           <IonCardTitle className="ion-text-center">{formatDate(targetDate)}</IonCardTitle>
           </IonCardHeader>
         <IonCardContent>
+          <BiorhythmChart />
         <IonItem>
           <p>Physical: {physical.toFixed(4)}</p>
           </IonItem>
